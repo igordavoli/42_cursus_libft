@@ -6,9 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:46:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/08/19 22:48:04 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/08/24 23:33:53 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strlen(char *str)
 {

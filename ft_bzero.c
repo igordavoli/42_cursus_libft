@@ -6,19 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/24 13:01:06 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/08/24 23:33:19 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/08/25 00:04:12 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, unsigned int n)
+void	ft_bzero(void *s, unsigned int n)
 {
-	unsigned char *p;
-
-	p = s;
-	while (n-- > 0)
-	{
-		*p++ = '\0';
-	}
+	ft_memset(s, 0, n);
 }

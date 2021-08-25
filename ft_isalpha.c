@@ -6,9 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:51:54 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/08/19 22:48:05 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/08/24 23:34:05 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalpha(char c)
 {
