@@ -6,13 +6,13 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 22:18:37 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/08/24 23:33:41 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/08/27 12:47:11 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	return (c >= ' ' && c <= '~');
 }

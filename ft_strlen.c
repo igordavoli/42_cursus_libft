@@ -6,21 +6,19 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 15:46:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/08/24 23:33:53 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/08/29 00:12:47 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
-	int	i;
+	const char	*s;
 
-	i = 0;
-	while (*str)
-	{
-		str++;
-		i++;
-	}
-	return (i);
+	s = str;
+	while (*s)
+		s++;
+	return (s - str);
 }

@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/18 15:51:54 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/08/27 12:47:11 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/08/26 12:26:13 by idavoli-          #+#    #+#             */
+/*   Updated: 2021/09/01 18:28:54 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
-int	ft_isdigit(int c)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	return (c >= '0' && c <= '9');
+	size_t	srclen;
+
+	srclen = ft_strlen(src);
+	ft_memmove(dst, src, dstsize);
+	if (dstsize != 0)
+		dst[dstsize - 1] = '\0';
+	return (srclen);
 }
