@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_sncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 00:33:58 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/04 22:31:31 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/09/02 20:03:49 by idavoli-          #+#    #+#             */
+/*   Updated: 2021/09/04 22:22:25 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-void	*ft_memcpy( void *dst, const void *src, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	char		*d;
-	const char	*s;
+	int	diff;
 
-	d = (char *) dst;
-	s = (const char *) src;
-	while (n-- > 0)
-		*d++ = *s++;
-	return (dst);
+	diff = 0;
+	while (n-- > 0 && *s1 != '\0')
+	{
+		if (*s1 != *s2)
+		{
+			diff = *s1 - *s2;
+			break ;
+		}
+		s1++;
+		s2++;
+	}
+	return (diff);
 }

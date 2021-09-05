@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 00:33:58 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/08/30 17:54:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/04 17:37:25 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ void	*ft_memmove( void *dest, const void *src, size_t n)
 	if (d == s || n == 0)
 		return (dest);
 	if (d < s)
-	{
-		while (n--)
-			*d++ = *s++;
-	}
+		ft_memcpy(d, s, n);
 	else
 	{
 		while (n--)

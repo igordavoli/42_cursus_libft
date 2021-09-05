@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 00:33:58 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/04 22:31:31 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/09/04 18:09:17 by idavoli-          #+#    #+#             */
+/*   Updated: 2021/09/04 22:36:21 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <ctype.h>
+#include <string.h>
 #include "libft.h"
 
-void	*ft_memcpy( void *dst, const void *src, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	char		*d;
-	const char	*s;
+	char	*h;
+	char	*n;
+	size_t	n_len;
 
-	d = (char *) dst;
-	s = (const char *) src;
-	while (n-- > 0)
-		*d++ = *s++;
-	return (dst);
+	h = (char *) haystack;
+	n = (char *) needle;
+	n_len = strlen(n);
+	while (len > 0 && *h)
+	{
+		if (!ft_strncmp(n, h, n_len) && len > n_len - 1)
+			return (h);
+		h++;
+		len--;
+	}
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 12:26:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/01 18:28:19 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/04 22:39:40 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,20 @@
 #include "libft.h"
 #include <string.h>
 
-// size_t	ft_strlen(const char *str);
-// void	*ft_memmove(void *dest, const void *src, size_t n);
-
-size_t	ft_strnlen(char *str, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < n && *str++)
-		i++;
-	return (i);
-}
-
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	to_add;
 	size_t	dstlen;
 	size_t	srclen;
 
-	dstlen = ft_strnlen(dst, dstsize);
+	dstlen = ft_strlen(dst);
+	if (ft_strlen(dst) > dstsize)
+		dstlen = ft_strlen(dst);
+	else
+		dstlen = dstsize;
 	srclen = ft_strlen(src);
 	to_add = dstsize - dstlen;
-	if (dstsize > dstlen + 1)
+	if (dstsize < dstlen + 1)
 	{
 		if (to_add > srclen)
 			memmove(dst + dstlen, src, srclen + 1);
