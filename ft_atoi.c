@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 00:33:58 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/06 01:47:47 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/09/05 22:20:52 by idavoli-          #+#    #+#             */
+/*   Updated: 2021/09/06 03:06:36 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
-void	*ft_memcpy( void *dst, const void *src, size_t n)
+int	is_space(char c)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	return ((c >= 9 && c <= 13) || c == ' ');
+}
 
-	if (dst != NULL && src != NULL && dst != src)
+int	ft_atoi(const char *str)
+{
+	int	num;
+	int	sig;
+
+	num = 0;
+	sig = 1;
+	while (is_space(*str))
+		str++;
+	if (ft_isdigit(*str) || *str == '-' || *str == '+')
 	{
-		d = (unsigned char *) dst;
-		s = (unsigned char *) src;
-		while (n--)
-			*d++ = *s++;
+		if (*str == '-')
+			sig = -1;
+		if (*str == '+' || *str == '-')
+			str++;
+		while (ft_isdigit(*str))
+		{
+			num *= 10;
+			num += *str - '0';
+			str++;
+		}
 	}
-	return (dst);
+	return (num * sig);
 }
