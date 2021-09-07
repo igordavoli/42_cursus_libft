@@ -6,12 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:03:49 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/04 22:30:55 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/06 23:52:32 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <ctype.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

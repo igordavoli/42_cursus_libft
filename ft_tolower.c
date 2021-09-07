@@ -6,9 +6,11 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 18:42:14 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/01 19:40:44 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/07 00:12:22 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

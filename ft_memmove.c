@@ -6,20 +6,19 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 00:33:58 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/04 17:37:25 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/06 23:52:48 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 void	*ft_memmove( void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
+	char	*d;
+	char	*s;
 
-	d = dest;
-	s = src;
+	d = (char *)dest;
+	s = (char *)src;
 	if (d == s || n == 0)
 		return (dest);
 	if (d < s)

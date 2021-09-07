@@ -6,36 +6,30 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 12:26:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/04 22:39:40 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/06 23:55:43 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	to_add;
 	size_t	dstlen;
 	size_t	srclen;
+	size_t	to_add;
 
 	dstlen = ft_strlen(dst);
-	if (ft_strlen(dst) > dstsize)
-		dstlen = ft_strlen(dst);
-	else
-		dstlen = dstsize;
 	srclen = ft_strlen(src);
-	to_add = dstsize - dstlen;
-	if (dstsize < dstlen + 1)
+	to_add = dstsize - dstlen - 1;
+	if (!dstsize || ((dstsize - 1) < dstlen))
+		return (srclen + dstsize);
+	if ((dstsize - 1) >= (dstlen + srclen))
+		ft_memcpy(dst + dstlen, src, srclen + 1);
+	else
 	{
-		if (to_add > srclen)
-			memmove(dst + dstlen, src, srclen + 1);
-		else
-		{
-			memmove(dst + dstlen, src, to_add - 1);
-			dst[dstsize - 1] = '\0';
-		}
+		ft_memcpy(dst + dstlen, src, to_add);
+		if (dstsize != 0)
+			dst[dstsize] = '\0';
 	}
 	return (dstlen + srclen);
 }
