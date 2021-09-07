@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/26 12:26:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/07 00:54:47 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/09/07 00:17:25 by idavoli-          #+#    #+#             */
+/*   Updated: 2021/09/07 01:57:00 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+char	*ft_strdup(const char *s1)
 {
-	size_t	srclen;
+	char	*str_dup;
+	size_t	size;
 
-	srclen = ft_strlen(src);
-	ft_memcpy(dst, src, dstsize);
-	if (dstsize != 0)
-		dst[dstsize] = '\0';
-	return (srclen);
+	size = ft_strlen(s1) + 1;
+	str_dup = (char *)malloc(size);
+	ft_strlcpy(str_dup, s1, size);
+	return (str_dup);
 }
