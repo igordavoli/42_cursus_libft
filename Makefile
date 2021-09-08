@@ -1,13 +1,12 @@
 .PHONY: all tests_run clean fclean re
 
-NAME = libft
+NAME = libft.a
 
 CC = clang
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ./main.c \
-	./ft_isalpha.c \
+SRC = ./ft_isalpha.c \
 	./ft_isdigit.c \
 	./ft_isalnum.c \
 	./ft_isascii.c \
@@ -31,22 +30,23 @@ SRC = ./main.c \
 	./ft_calloc.c \
 	./ft_strdup.c
 
- OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) -o $(NAME) $(CFLAGS) -lbsd $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-tests_run: $(NAME)
-	@./$(NAME)
+tests_run: $(NAME) main.c
+	clang $(CFLAGS) -fsanitize=address -lbsd main.c $(NAME) -o tests.out
+	@./tests.out
 	@make fclean
 
 clean:
-	rm -rf *.o
+	@rm -rf *.o
 
 fclean:
-	rm -rf *.o libft
+	rm -rf *.o $(NAME) .tests.out
 re:
 	make fclean && make all
 

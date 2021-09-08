@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/02 20:03:49 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/04 22:33:45 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/08 02:51:34 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ char	*ft_strchr(const char *s, int c)
 
 	ch = c;
 	s_size = ft_strlen(s) + 1;
-	while (s_size >= 0)
+	while (s_size--)
 	{
 		if (*s == ch)
 			return ((char *)s);
 		s++;
-		s_size--;
 	}
 	return (NULL);
 }
