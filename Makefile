@@ -28,25 +28,29 @@ SRC = ./ft_isalpha.c \
 	./ft_strnstr.c \
 	./ft_atoi.c \
 	./ft_calloc.c \
-	./ft_strdup.c
+	./ft_strdup.c \
+	./ft_substr.c \
+	./ft_strjoin.c \
+	./ft_strtrim.c
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
 tests_run: $(NAME) main.c
-	clang $(CFLAGS) -fsanitize=address -lbsd main.c $(NAME) -o tests.out
+	@clang $(CFLAGS) -fsanitize=address -lbsd main.c $(NAME) -o tests.out
 	@./tests.out
 	@make fclean
+	@rm tests.out
 
 clean:
 	@rm -rf *.o
 
 fclean:
-	rm -rf *.o $(NAME) .tests.out
+	@rm -rf *.o $(NAME) .tests.out
 re:
 	make fclean && make all
 

@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 12:26:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/08 02:53:06 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/08 22:15:01 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (srclen + dstsize);
 	if ((dstsize - 1) > (dstlen + srclen))
 		ft_memcpy(dst + dstlen, src, srclen + 1);
-	else
+	else if (dstsize != 0)
 	{
 		ft_memcpy(dst + dstlen, src, to_add);
-		if (dstsize != 0)
-			dst[dstsize - 1] = '\0';
+		dst[dstsize - 1] = '\0';
 	}
 	return (dstlen + srclen);
 }

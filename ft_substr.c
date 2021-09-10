@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/02 20:03:49 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/10 00:20:55 by idavoli-         ###   ########.fr       */
+/*   Created: 2021/09/08 17:07:20 by idavoli-          #+#    #+#             */
+/*   Updated: 2021/09/09 22:01:57 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned char	ch;
-	int				s_size;
+	size_t	s_len;
+	char	*sub;
+	char	*sub_i;
+	char	*s_start;
 
-	ch = c;
-	s_size = ft_strlen(s) + 1;
-	while (s_size--)
-	{
-		if (*s == ch)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
+	if (!s)
+		return (NULL);
+	sub = (char *)malloc(len + 1);
+	if (!sub)
+		return (NULL);
+	s_start = (char *)s;
+	s_len = ft_strlen(s);
+	sub_i = sub;
+	s += start;
+	while (((size_t)(s - s_start) < s_len) && len--)
+		*sub_i++ = *s++;
+	*sub_i = '\0';
+	return (sub);
 }
