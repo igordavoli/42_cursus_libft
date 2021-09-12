@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/08 22:26:56 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/10 01:06:11 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/10 02:17:44 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*str && ft_strchr(set, *str))
 		str++;
 	start = str - s1;
-	str = (char *)s1 + ft_strlen(s1);
-	while (*str != *s1 && ft_strrchr(set, *str))
+	str = (char *)s1 + ft_strlen(s1) - 1;
+	while ((str - s1) && ft_strrchr(set, *str))
 		str--;
 	len = (str - s1) - start + 1;
 	return (ft_substr(s1, start, len));
