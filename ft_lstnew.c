@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 16:26:21 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/12 21:45:42 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/13 00:48:24 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstnew(void *content)
 	t_list	*new;
 
 	new = (t_list *)malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
 	new->content = (void *)content;
 	new->next = NULL;
 	return (new);

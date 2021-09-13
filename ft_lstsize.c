@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 21:51:13 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/12 22:32:39 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/13 01:00:28 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
-	i = 0;
+	if (!lst)
+		return (0);
+	i = 1;
 	while (lst->next)
 	{
 		lst = lst->next;
