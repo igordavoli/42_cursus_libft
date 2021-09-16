@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 23:43:41 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/13 00:44:36 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/16 19:35:28 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!lst)
 		return (NULL);
 	nd = ft_lstnew(NULL);
-	while (lst->next)
+	while (lst)
 	{
 		del(lst->content);
 		nd->next = f(lst->content);

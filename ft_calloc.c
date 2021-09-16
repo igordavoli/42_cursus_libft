@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 03:08:40 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/07 00:13:03 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/14 02:51:46 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,8 @@ void	*ft_calloc(size_t count, size_t size)
 		mem = malloc(t_size);
 	else
 		return (NULL);
-	if (mem)
-		ft_bzero(mem, t_size);
-	else
+	if (!mem)
 		return (NULL);
+	ft_bzero(mem, t_size);
 	return (mem);
 }

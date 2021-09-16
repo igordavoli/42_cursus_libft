@@ -1,0 +1,6 @@
+master/
+tri/
+war/
+*.a
+*.o
+*test*
