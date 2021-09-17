@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 23:43:41 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/17 00:38:37 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/17 00:47:33 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (lst)
 	{
-		lst = lst;
 		begin = ft_lstnew(f(lst->content));
 		if (!begin)
 			return (NULL);
