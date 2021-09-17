@@ -6,7 +6,7 @@
 /*   By: idavoli- <idavoli-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 23:25:16 by idavoli-          #+#    #+#             */
-/*   Updated: 2021/09/16 19:09:14 by idavoli-         ###   ########.fr       */
+/*   Updated: 2021/09/16 20:51:57 by idavoli-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list **swp_lst;
-	t_list *swp_next;
-	t_list *lst_i;
+	void *nd;
 
-	swp_lst = lst;
-	lst_i = *lst;
-	while (lst_i)
+	while(*lst)
 	{
-		swp_next = lst_i->next;
-		del(lst_i->content);
-		free(lst_i);
-		lst_i = swp_next;
+		nd = ft_lstlast((*lst));
+		ft_lstdelone((t_list *)nd, del);
+		nd = NULL;
 	}
-	swp_lst = NULL;
+
 }
