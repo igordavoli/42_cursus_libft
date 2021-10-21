@@ -1,4 +1,4 @@
-<img align="right" src="https://badge42.herokuapp.com/api/project/idavoli-/libftm" />
+<img align="right" src="https://badge42.herokuapp.com/api/project/idavoli-/libft" />
 <h1><h1/>
 <div align="center">
   <img  src="https://game.42sp.org.br/static/assets/achievements/libftm.png" />
