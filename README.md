@@ -1,11 +1,11 @@
-<img align="right" src="https://badge42.herokuapp.com/api/project/idavoli-/Libft" />
-<h1><h1/>
-<div align="center">
-  <img  src="https://game.42sp.org.br/static/assets/achievements/libftm.png" />
-  <h2>42_cursus_libft</h2>
-</div>
-  
-## :sparkles: What is Libft?
-Libft is an individual project at 42 that requires us to re-create some standard C library functions including some additional ones that can be used later to build a library of useful functions for the rest of the program.
+<img align="right" src="https://badge42.herokuapp.com/api/project/idavoli-/libft" />
+<h1></h1>
 
-At 42 we're not allowed to use some standard libraries on our projects, so we have to keep growing this library with our own functions as we go farther in the program.
+<div align="center">
+  <img  src="https://game.42sp.org.br/static/assets/achievements/libft.png" />
+  <h1>get_next_line</h1>
+</div>
+
+## :sparkles: What's lidft 42?
+
+Is a function to get one line a time of text in a archive or other souce thats generate a filedescriptor, like the standard input and output.
