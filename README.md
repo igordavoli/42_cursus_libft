@@ -1,4 +1,4 @@
-<img align="right" src="https://badge42.herokuapp.com/api/project/idavoli-/Libft" />
+<img align="right" src="https://badge42.vercel.app/api/project/idavoli-/Libft" />
 <h1></h1>
 
 <div align="center">
